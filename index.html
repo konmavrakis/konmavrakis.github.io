@@ -1,0 +1,35 @@
+---
+layout: main
+---
+
+<div class="home">
+    <div class="logo-header">
+        <h1 class="post-title">{{ site.title }}</h1>
+        <p>Web developer by day, sloth by night <a href="/about/" style="text-decoration: underline;">...</a></p>
+        <ul class="social">
+            <li><a href="https://github.com/konmavrakis" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://twitter.com/konmavrakis" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+        <div>
+            <a class="page-link" target="_top" href="/about">About</a> - 
+            <a class="page-link" target="_top" href="/archive">Archive</a> 
+        </div>
+    </div>
+
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <div>
+                <a class="post-link" href="{{ site.url }}{{ post.url}}">{{ post.title }}</a>
+                <span class="post-date">{{ post.date | date_to_long_string }}</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="footer center">
+        Built with Jekyll using
+        <a href="https://github.com/kuoa/julia" target="_blank">Julia</a>
+        theme
+    </div>
+</div>

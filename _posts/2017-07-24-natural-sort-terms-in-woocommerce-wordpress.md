@@ -3,7 +3,7 @@ layout: post
 title: Natural Sort WooCommerce/WordPress categories or product attributes
 description: "Easilly natural sort terms or categories in WordPress or WooCommerce"
 author: konmavrakis
-category: wordpress woocommerce
+category: wordpress
 tags: wordpress woocommerce natsort php
 finished: true
 ---

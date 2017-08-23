@@ -16,7 +16,7 @@ resume: true
 resume-external: local
 resume-url: http://kmavrakis.com/assets/KonstantinosMavrakisCV.pdf
 
-url: https://kmavrakis.com
+url: http://kmavrakis.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/

@@ -1,8 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-# Specify your gem's dependencies in julia-jejyll-theme.gemspec
-gem 'jekyll'
-gem 'kramdown'
-gem 'jekyll-watch'
-gem 'rouge'
 gem 'github-pages'
+gem 'html-proofer'

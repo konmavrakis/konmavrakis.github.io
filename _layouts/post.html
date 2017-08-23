@@ -1,34 +1,49 @@
 ---
-layout: default
+layout: page
 ---
-<div class="post">
 
-  <header class="post-header">
-     <h1 class="post-title">{{ page.title }}</h1>
-     <p class="post-meta">
-         <i class="fa fa-calendar-o"></i> {{ page.date | date: "%b %-d, %Y" }}
-         {% if page.author %} • <i class="fa fa-user"></i> {{ page.author }}{% endif %}
-         {% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+{% if page.image and page.headerImage %}
+    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+{% endif %}
 
-    {% include prev_next_post.html %}
+<h1 class="title">{{ page.title }}</h1>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+<span class="date">
+    <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
+    {% if site.read-time %} - {% include read-time.html %}{% endif %}
+</span>
 
-    {% if site.google_analytics %}
-        {% include google_analytics.html %}
-    {% endif %}
+{% if site.show-tags %}
+    <div class="post-tags">
+        {% for tag in page.tags %}
+            <a class="item" href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
 
-    {% if site.disqus_shortname %}
-       {% include disqus.html %}
-    {% endif %}
+{{content}}
 
-  <div class="post-up" align="center">
-  	<a href="#">
-  	<i class="fa fa-angle-up fa-2x"></i>
-  	</a>
-  </div>
+{% if site.post-advance-links contains page.category %}
+    <div class="blog-navigation">
+        {% if page.previous.url %}
+            <a class="prev" href="{{ site.url }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+        {% else %}
+            <a class="prev"></a>
+        {% endif %}
+        {% if page.next.url %}
+            <a class="next" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+        {% endif %}
+    </div>
+{% endif %}
 
-</div>
+{% if site.related %}
+    {% include related.html %}
+{% endif %}
+
+{% if site.show-author %}
+    {% include author.html %}
+{% endif %}
+
+{% if site.disqus.categories contains page.category %}
+    {% include disqus.html %}
+{% endif %}

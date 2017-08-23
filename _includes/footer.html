@@ -1,20 +1,7 @@
-<div class="footer center">
-	<div class="site-header">
+<footer class="footer-main">
+    {{ site.name }} © {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
 
-		<nav class="site-nav">
-			<a href="#" class="menu-icon">
-				<i class="fa fa-navicon fa-lg"></i>
-			</a>
-			<div class="trigger">
-				{% for link in site.links %}
-				<a class="page-link" target="{% if link.external %}_blank{% else %}_top{% endif %}"
-				href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">{{link.name}}</a>
-				{% endfor %}
-			</div>
-		</nav>
-
-	</div>
-	Built with Jekyll using
-	<a href="https://github.com/kuoa/julia" target="_blank">Julia</a>
-	theme
-</div>
+    <p class="extra">
+        <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a> by <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>
+    </p>
+</footer>

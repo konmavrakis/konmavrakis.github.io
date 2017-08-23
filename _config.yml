@@ -3,7 +3,7 @@ name: Konstantinos Mavrakis
 bio: Web Application Developer @ Giraffes in the Kitchen
 
 # twitter summary info
-description: A blog about anything
+description: Personal blog about anything web dev related
 
 # if it's an external image, update below for true
 # better with square images
@@ -14,9 +14,9 @@ description: A blog about anything
 # and specify source (external or local).
 resume: true
 resume-external: local
-resume-url: assets/KonstantinosMavrakisCV.pdf
+resume-url: http://kmavrakis.com/assets/KonstantinosMavrakisCV.pdf
 
-url: https://konmavrakis.github.io
+url: https://kmavrakis.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
